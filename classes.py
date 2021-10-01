@@ -41,7 +41,7 @@ class Server:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as self.socket:
             self.socket.bind(('0.0.0.0', 33333))
             self.socket.listen()
-            self.activities["getting_clients"] = threading.Tread(target=self.get_clients)
+            self.activities["getting_clients"] = threading.Thread(target=self.get_clients)
 
         while True:
             os.system('cls' if os.name == 'nt' else 'clear')
