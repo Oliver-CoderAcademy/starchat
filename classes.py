@@ -36,7 +36,7 @@ class Server:
         self.clients = {}
         self.chat_history = []
         self.activities = {}
-        print(f"You are serving from {socket.gethostbyaddr()}")
+        print(f"You are serving from {socket.gethostbyname(socket.gethostname())}")
         
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as self.socket:
             self.socket.bind(('0.0.0.0', 33333))
